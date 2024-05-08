@@ -64,7 +64,7 @@ app.post("/", function(req, res) {
     }
 
     // if route is /final, add to final exam list
-        else if (req.body.list === "Final Exam) {
+        else if (req.body.list === "Final Exam") {
             finalExamItems.push(item);
             res.redirect("/finals");
         }

@@ -17,6 +17,8 @@ let funItems = ["Watch TV", "Read a Book"];
 // set an empty array for new weekend items
 let weekendItems = ["Relax", "Watch TV"];
 
+let finalExamItems = ["ICS 385", "PHIL 300"];
+
 // set EJS as the viewing engine to display html
 app.set('view engine', 'ejs');
 
@@ -60,6 +62,13 @@ app.post("/", function(req, res) {
         weekendItems.push(item);
         res.redirect("/weekend");
     }
+
+    // if route is /final, add to final exam list
+        else if (req.body.list === "Final Exam) {
+            finalExamItems.push(item);
+            res.redirect("/finals");
+        }
+
 
     else {
         items.push(item);
